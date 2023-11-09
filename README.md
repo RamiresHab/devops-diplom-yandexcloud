@@ -890,7 +890,17 @@ worker2                    : ok=23   changed=19   unreachable=0    failed=0    s
 ```
 
 </details>
-                    
+
+Вывод команды kubectl из под моего пользователя
+
+```
+ro.khabibullin@master-1:~$ kubectl get nodes
+NAME       STATUS   ROLES           AGE    VERSION
+master-1   Ready    control-plane   107m   v1.28.2
+worker-1   Ready    <none>          106m   v1.28.2
+worker-2   Ready    <none>          106m   v1.28.2
+```
+
 ---
 ### Создание тестового приложения
 
@@ -993,6 +1003,42 @@ worker2                    : ok=1    changed=0    unreachable=0    failed=0    s
 Убедимся, что приложение работает
 ![Alt text](image.png)
 
+Вывод команды kubectl get nodes
+
+```
+ro.khabibullin@master-1:~$ kubectl get po --all-namespaces
+NAMESPACE      NAME                                   READY   STATUS    RESTARTS       AGE
+default        diploma-app-nginx-cc7b9f8df-85s69      1/1     Running   0              46m
+default        diploma-app-nginx-cc7b9f8df-l9f94      1/1     Running   0              46m
+default        diploma-app-nginx-cc7b9f8df-lk7nk      1/1     Running   0              46m
+kube-flannel   kube-flannel-ds-b8wq5                  1/1     Running   0              106m
+kube-flannel   kube-flannel-ds-d4rq9                  1/1     Running   0              106m
+kube-flannel   kube-flannel-ds-rvctp                  1/1     Running   0              106m
+kube-system    coredns-5dd5756b68-6lrsm               1/1     Running   0              106m
+kube-system    coredns-5dd5756b68-kx7w8               1/1     Running   0              106m
+kube-system    etcd-master-1                          1/1     Running   0              107m
+kube-system    kube-apiserver-master-1                1/1     Running   0              107m
+kube-system    kube-controller-manager-master-1       1/1     Running   0              107m
+kube-system    kube-proxy-45ggh                       1/1     Running   0              106m
+kube-system    kube-proxy-r7nfl                       1/1     Running   0              106m
+kube-system    kube-proxy-tf7s4                       1/1     Running   0              106m
+kube-system    kube-scheduler-master-1                1/1     Running   0              107m
+monitoring     alertmanager-main-0                    2/2     Running   0              102m
+monitoring     alertmanager-main-1                    2/2     Running   0              102m
+monitoring     alertmanager-main-2                    2/2     Running   0              102m
+monitoring     blackbox-exporter-76b5c44577-pf94b     3/3     Running   0              102m
+monitoring     grafana-5d55b655cf-6f56t               1/1     Running   1 (101m ago)   102m
+monitoring     kube-state-metrics-6c664d5dc8-clctf    3/3     Running   0              102m
+monitoring     node-exporter-5nr78                    2/2     Running   0              102m
+monitoring     node-exporter-9km5s                    2/2     Running   0              102m
+monitoring     node-exporter-xlq56                    2/2     Running   0              102m
+monitoring     prometheus-adapter-7cc789bfcc-846zm    1/1     Running   0              102m
+monitoring     prometheus-adapter-7cc789bfcc-f8n9k    1/1     Running   0              102m
+monitoring     prometheus-k8s-0                       2/2     Running   0              102m
+monitoring     prometheus-k8s-1                       2/2     Running   0              102m
+monitoring     prometheus-operator-7b47d4ff7b-lr92f   2/2     Running   0              102m
+```
+
 Ссылка на приложение: http://158.160.71.222:30080/
 
 ---
@@ -1076,8 +1122,13 @@ Configuration (with the authentication token) was saved in "/etc/gitlab-runner/c
 
 Ссылки:  
 [Terraform](https://github.com/RamiresHab/terraform-diploma)  
+
 [Ansible](https://github.com/RamiresHab/ansible-diploma) 
+
 [Приложение](http://158.160.71.222:30080/)  
+
 [Репозиторий с приложением](https://github.com/RamiresHab/docker-diploma)  
+
 [Grafana](http://158.160.71.222:32000/)
+
 [Gitlab](https://github.com/RamiresHab/gitlab-diploma)
