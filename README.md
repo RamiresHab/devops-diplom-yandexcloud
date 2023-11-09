@@ -1133,4 +1133,4 @@ Configuration (with the authentication token) was saved in "/etc/gitlab-runner/c
 
 [Gitlab](https://github.com/RamiresHab/gitlab-diploma)
 
-[DockerHub] (https://hub.docker.com/repository/docker/ramireshab/front-diploma-netology/)
+[DockerHub](https://hub.docker.com/repository/docker/ramireshab/front-diploma-netology/)
