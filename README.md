@@ -1132,3 +1132,5 @@ Configuration (with the authentication token) was saved in "/etc/gitlab-runner/c
 [Grafana](http://158.160.71.222:32000/)
 
 [Gitlab](https://github.com/RamiresHab/gitlab-diploma)
+
+[DockerHub] (https://hub.docker.com/repository/docker/ramireshab/front-diploma-netology/)
