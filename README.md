@@ -39,6 +39,8 @@
 
 <details>
 <summary>➜  terraform terraform apply -auto-approve</summary>
+
+```
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
@@ -311,12 +313,15 @@ worker2 ansible_host=84.201.149.186 ansible_user=ro.khabibullin
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
 EOT
+```
 
 </details>
 
 
 <details>
 <summary>➜  terraform terraform destroy -auto-approve</summary>
+
+```
 yandex_vpc_network.diploma_vpc: Refreshing state... [id=enpno6opmmsicl3ognom]
 yandex_vpc_subnet.diploma_subnet_a: Refreshing state... [id=e9b3k1o5vovfbk7c7mqu]
 yandex_vpc_subnet.diploma_subnet_c: Refreshing state... [id=b0c2oi8evgsnis3f3b24]
@@ -684,6 +689,7 @@ yandex_vpc_network.diploma_vpc: Destroying... [id=enpno6opmmsicl3ognom]
 yandex_vpc_network.diploma_vpc: Destruction complete after 1s
 
 Destroy complete! Resources: 6 destroyed.
+```
 
 </details>
                                                      
@@ -702,6 +708,8 @@ terraform output ansible_inventory | sed '/<<EOT/d' | sed '/EOT/d' > ../ansible/
 
 <details>
 <summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_kubeadm -v </summary>
+
+```
 No config file found; using defaults
 
 PLAY [Install k8s from kubeadm] *********************************************************************************************************************************
@@ -879,6 +887,7 @@ PLAY RECAP *********************************************************************
 master1                    : ok=27   changed=23   unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
 worker1                    : ok=23   changed=19   unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
 worker2                    : ok=23   changed=19   unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+```
 
 </details>
                     
@@ -898,6 +907,8 @@ worker2                    : ok=23   changed=19   unreachable=0    failed=0    s
 
 <details>
 <summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_prometheus -v</summary>
+
+```
 No config file found; using defaults
 
 PLAY [Install k8s from kubeadm] *********************************************************************************************************************************
@@ -931,6 +942,7 @@ PLAY RECAP *********************************************************************
 master1                    : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 worker1                    : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
 worker2                    : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0  
+```
 
 </details>
 
@@ -947,6 +959,8 @@ Password: NVsdm4HLVaq4y6H
 
 <details>
 <summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_app -v</summary>
+
+```
 No config file found; using defaults
 
 PLAY [Install k8s from kubeadm] *********************************************************************************************************************************
@@ -970,6 +984,7 @@ PLAY RECAP *********************************************************************
 master1                    : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 worker1                    : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
 worker2                    : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+```
 
 </details>
 
@@ -991,6 +1006,8 @@ Password: kVGEV33GnfmhchZ
 
 <details>
 <summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_runner -v</summary>
+
+```
 No config file found; using defaults
 
 PLAY [Install k8s from kubeadm] *********************************************************************************************************************************
@@ -1024,6 +1041,7 @@ PLAY RECAP *********************************************************************
 master1                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 worker1                    : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
 worker2                    : ok=1    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0  
+```
 
 </details>
 
