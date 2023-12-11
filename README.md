@@ -707,7 +707,7 @@ terraform output ansible_inventory | sed '/<<EOT/d' | sed '/EOT/d' > ../ansible/
 После этого перейдём в каталог с ansible и установим Kubernetes через kubeadm, для этого у нас есть роль install_kubeadm
 
 <details>
-<summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_kubeadm -v </summary>
+<summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_kubeadm -v --ssh-common-args='-o StrictHostKeyChecking=no'</summary>
 
 ```
 No config file found; using defaults
@@ -916,7 +916,7 @@ worker-2   Ready    <none>          106m   v1.28.2
 Для установки системы мониторинга мы воспользуемся ролью ansible, в которую мы добавили monitoring_service.yaml для публикации сервиса Grafana
 
 <details>
-<summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_prometheus -v</summary>
+<summary>➜  ansible ansible-playbook -i hosts playbook.yml --tags install_prometheus -v --ssh-common-args='-o StrictHostKeyChecking=no'</summary>
 
 ```
 No config file found; using defaults
